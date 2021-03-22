@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="stor logo" src="https://raw.githubusercontent.com/paingha/stor/master/stor-logo-new.png">
+  <img alt="stor logo" src="https://raw.githubusercontent.com/paingha/stor/master/stor_logo.png">
 </p>
 <h1 align="center"> Stor </h1> <br>
 
