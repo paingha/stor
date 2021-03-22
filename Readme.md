@@ -1,3 +1,4 @@
+<img align="center" src="https://raw.githubusercontent.com/paingha/stor/master/stor-logo.png"></img>
 <h1 align="center"> Stor </h1> <br>
 
 Stor is a Go package that makes exporting databases easy and fun. It provides support for cron jobs so exports can be made periodically according to a schedule, exports can be uploaded to AWS S3, Google Drive, FTP and saved locally.
@@ -36,3 +37,8 @@ Contact me by Twitter or Linked In :)
 [Linked In](https://www.linkedin.com/in/paingha-alagoa-joe/)
 <br />
 [Twitter](https://twitter.com/painghajnr)
+
+
+## Attribution
+
+Logo Image from Freepik <a href='https://www.freepik.com/vectors/business'>Business vector created by macrovector - www.freepik.com</a>
