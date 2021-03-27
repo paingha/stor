@@ -7,6 +7,13 @@ Stor is a Go package that makes exporting databases easy and fun. It provides su
 
 Stor supports multiple databases, so exports can be made of multiple databases at a time. 
 
+## Supported Databases:
+
+<ul>
+<li>Postgres Database</li>
+<li>MySQL Database</li>
+<li>SQLlite 3</li>
+</ul>
 
 ## Table of Contents
 
