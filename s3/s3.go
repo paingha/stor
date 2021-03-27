@@ -2,6 +2,7 @@ package s3
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 
@@ -10,27 +11,28 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3/s3manager"
 )
 
-func UploadExportToS3(filename string) {
-	bucket := os.Getenv("AWS_BUCKET")
-	region := os.Getenv("AWS_REGION")
+type S3ConnectionDetails struct {
+	bucket string
+	region string
+}
+
+func (s *S3ConnectionDetails) UploadExportToS3(filename string) {
 	file, err := os.Open(filename)
 	if err != nil {
-		fmt.Println("Failed to open file", filename, err)
-		os.Exit(1)
+		log.Fatalf("Failed to open file %s %s", filename, err)
 	}
 	defer file.Close()
 	session := session.New(&aws.Config{
-		Region: aws.String(region),
+		Region: aws.String(s.region),
 	})
 	svc := s3manager.NewUploader(session)
 	result, err := svc.Upload(&s3manager.UploadInput{
-		Bucket: aws.String(bucket),
+		Bucket: aws.String(s.bucket),
 		Key:    aws.String(filepath.Base(filename)),
 		Body:   file,
 	})
 	if err != nil {
-		fmt.Println("error", err)
-		os.Exit(1)
+		log.Fatalf("File Upload error %s %s", filename, err)
 	}
 
 	fmt.Printf("Successfully uploaded %s to %s\n", filename, result.Location)
